@@ -1,6 +1,35 @@
 import pandas as pd
 import argparse
 
+"""
+ROSCOE指标计算工具
+
+功能介绍：
+    本脚本用于计算ROSCOE评估体系中的四个核心指标（ROSCOE-SA、ROSCOE-SS、ROSCOE-LI、ROSCOE-LC），
+    并将计算结果单独保存为CSV文件。适用于处理以空格或制表符分隔的结构化数据文件。
+    
+运行命令格式：
+    # 指定输入和输出文件路径
+    python roscoe_calculator.py --input 输入文件路径 --output 输出文件路径
+    
+    
+    # 或使用短参数
+    python roscoe_calculator.py -i 输入文件路径 -o 输出文件路径
+    
+    # 仅指定输入文件（输出文件会自动生成，在输入文件名后添加"_roscoe_only"）
+    python roscoe_calculator.py -i 输入文件路径
+
+参数说明：
+    --input (-i)：必填，输入数据文件的路径（支持空格/制表符分隔的文本文件）
+    --output (-o)：可选，输出结果文件的路径（默认生成CSV格式）
+
+输出说明：
+    输出文件为CSV格式，包含以下内容：
+    - ID列：来自输入文件的ID或自动生成的索引
+    - 四个ROSCOE指标列：ROSCOE-SA、ROSCOE-SS、ROSCOE-LI、ROSCOE-LC（计算成功的指标）
+"""
+
+
 def calculate_roscoe_metrics(csv_file_path, output_file_path):
     """
     读取CSV文件，计算每行的ROSCOE各项指标平均值，并保存结果
