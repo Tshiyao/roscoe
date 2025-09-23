@@ -36,3 +36,180 @@ Evaluating /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_m
 Scores written to /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/output/0919_grpo_mathall-mpnet-base-v2/scores_amc23.tsv
 Max GPU Memory Allocated: 439 MB
 [2025-09-23 17:59:22] 0919_grpo_math：打分完成
+[2025-09-23 22:36:44] 开始处理：0919_grpo_math（日志：/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/logs/0919_grpo_math_process.log）
+[2025-09-23 22:36:44] 0919_grpo_math：开始清洗
+输出文件夹: /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math
+读取输入文件: /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/raw/0919_grpo_math//raw.json
+写入JSONL文件/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math/aime24.jsonl
+已生成 /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math/aime24.jsonl，包含 30 条记录
+写入JSONL文件/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math/math500.jsonl
+已生成 /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math/math500.jsonl，包含 500 条记录
+写入JSONL文件/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math/amc23.jsonl
+已生成 /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math/amc23.jsonl，包含 40 条记录
+处理完成
+[2025-09-23 22:36:44] 0919_grpo_math：开始打分（数据集：amc23）
+/root/autodl-tmp/roscoe/ParlAI/parlai/core/opt.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Some weights of RobertaModel were not initialized from the model checkpoint at facebook/roscoe-512-roberta-base and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at roberta-base and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+aime24.jsonl
+['amc23']
+Skipping due to --datasets filter: aime24.jsonl
+math500.jsonl
+['amc23']
+Skipping due to --datasets filter: math500.jsonl
+Evaluating /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math/amc23.jsonl
+  0%|          | 0/28 [00:00<?, ?it/s]  4%|▎         | 1/28 [00:00<00:06,  3.94it/s] 11%|█         | 3/28 [00:00<00:03,  7.41it/s] 14%|█▍        | 4/28 [00:00<00:03,  7.40it/s] 18%|█▊        | 5/28 [00:00<00:03,  7.38it/s] 21%|██▏       | 6/28 [00:00<00:03,  6.44it/s] 25%|██▌       | 7/28 [00:01<00:03,  6.95it/s] 32%|███▏      | 9/28 [00:01<00:02,  7.94it/s] 36%|███▌      | 10/28 [00:01<00:02,  8.12it/s] 39%|███▉      | 11/28 [00:01<00:02,  8.36it/s] 43%|████▎     | 12/28 [00:01<00:01,  8.41it/s] 50%|█████     | 14/28 [00:01<00:01, 10.23it/s] 57%|█████▋    | 16/28 [00:01<00:01, 11.37it/s] 64%|██████▍   | 18/28 [00:02<00:00, 11.56it/s] 71%|███████▏  | 20/28 [00:02<00:00, 12.78it/s] 82%|████████▏ | 23/28 [00:02<00:00, 16.18it/s] 89%|████████▉ | 25/28 [00:02<00:00, 16.36it/s] 96%|█████████▋| 27/28 [00:02<00:00, 13.13it/s]100%|██████████| 28/28 [00:02<00:00, 10.41it/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:00<00:00,  7.61it/s]100%|██████████| 2/2 [00:00<00:00,  9.23it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 14.18it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21.67it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18.13it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 130.47it/s]
+Scoring chains ... :   0%|          | 0/40 [00:00<?, ?it/s]We strongly recommend passing in an `attention_mask` since your input_ids may be padded. See https://huggingface.co/docs/transformers/troubleshooting#incorrect-output-when-padding-tokens-arent-masked.
+`loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+Scoring chains ... :   2%|▎         | 1/40 [00:06<04:26,  6.82s/it]Scoring chains ... :   5%|▌         | 2/40 [00:52<18:54, 29.86s/it]Scoring chains ... :   8%|▊         | 3/40 [00:56<11:09, 18.08s/it]Scoring chains ... :   8%|▊         | 3/40 [01:38<20:18, 32.93s/it]
+Traceback (most recent call last):
+  File "/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/roscoe.py", line 262, in <module>
+    scores = evaluator.evaluate(score_types=score_types)
+  File "/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/score.py", line 993, in evaluate
+    scores = self.compute_nli_scores(
+  File "/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/score.py", line 900, in compute_nli_scores
+    self.contradiction_step_vs_step(
+  File "/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/score.py", line 583, in contradiction_step_vs_step
+    return self.max_contradiction(chain, chain, batch_size)
+  File "/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/score.py", line 564, in max_contradiction
+    probs.extend(self.contradiction_probability(pr, hyp))
+  File "/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/score.py", line 547, in contradiction_probability
+    output = self.nli_model(**input)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 1079, in forward
+    outputs = self.deberta(
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 786, in forward
+    encoder_outputs = self.encoder(
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 659, in forward
+    output_states, attn_weights = layer_module(
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/modeling_layers.py", line 94, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 438, in forward
+    attention_output, att_matrix = self.attention(
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 371, in forward
+    self_output, att_matrix = self.self(
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 251, in forward
+    rel_att = self.disentangled_attention_bias(
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 306, in disentangled_attention_bias
+    pos_key_layer = self.transpose_for_scores(self.key_proj(rel_embeddings), self.num_attention_heads).repeat(
+KeyboardInterrupt
+[2025-09-23 22:39:03] 开始处理：0919_grpo_math（日志：/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/logs/0919_grpo_math_process.log）
+[2025-09-23 22:39:03] 0919_grpo_math：开始清洗
+输出文件夹: /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math
+读取输入文件: /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/raw/0919_grpo_math//raw.json
+写入JSONL文件/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math/aime24.jsonl
+已生成 /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math/aime24.jsonl，包含 30 条记录
+写入JSONL文件/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math/math500.jsonl
+已生成 /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math/math500.jsonl，包含 500 条记录
+写入JSONL文件/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math/amc23.jsonl
+已生成 /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math/amc23.jsonl，包含 40 条记录
+处理完成
+[2025-09-23 22:39:03] 0919_grpo_math：开始打分（数据集：amc23）
+/root/autodl-tmp/roscoe/ParlAI/parlai/core/opt.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Some weights of RobertaModel were not initialized from the model checkpoint at facebook/roscoe-512-roberta-base and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of RobertaModel were not initialized from the model checkpoint at roberta-base and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+aime24.jsonl
+['amc23']
+Skipping due to --datasets filter: aime24.jsonl
+math500.jsonl
+['amc23']
+Skipping due to --datasets filter: math500.jsonl
+Evaluating /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/0919_grpo_math/amc23.jsonl
+  0%|          | 0/28 [00:00<?, ?it/s]  4%|▎         | 1/28 [00:00<00:10,  2.55it/s]  7%|▋         | 2/28 [00:00<00:06,  3.90it/s] 11%|█         | 3/28 [00:00<00:05,  4.80it/s] 14%|█▍        | 4/28 [00:00<00:04,  5.03it/s] 18%|█▊        | 5/28 [00:01<00:04,  5.17it/s] 25%|██▌       | 7/28 [00:01<00:03,  6.06it/s] 29%|██▊       | 8/28 [00:01<00:02,  6.76it/s] 32%|███▏      | 9/28 [00:01<00:02,  6.38it/s] 36%|███▌      | 10/28 [00:01<00:02,  6.40it/s] 39%|███▉      | 11/28 [00:01<00:02,  6.44it/s] 43%|████▎     | 12/28 [00:02<00:02,  6.45it/s] 46%|████▋     | 13/28 [00:02<00:02,  6.87it/s] 54%|█████▎    | 15/28 [00:02<00:01,  8.94it/s] 57%|█████▋    | 16/28 [00:02<00:01,  8.44it/s] 61%|██████    | 17/28 [00:02<00:01,  8.26it/s] 68%|██████▊   | 19/28 [00:02<00:00,  9.23it/s] 75%|███████▌  | 21/28 [00:02<00:00, 10.54it/s] 82%|████████▏ | 23/28 [00:03<00:00, 12.36it/s] 89%|████████▉ | 25/28 [00:03<00:00, 12.11it/s] 96%|█████████▋| 27/28 [00:03<00:00, 10.01it/s]100%|██████████| 28/28 [00:03<00:00,  7.68it/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:00<00:00,  5.74it/s]100%|██████████| 2/2 [00:00<00:00,  6.02it/s]100%|██████████| 2/2 [00:00<00:00,  5.98it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  7.37it/s]100%|██████████| 1/1 [00:00<00:00,  7.36it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 12.04it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 70.87it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 70.93it/s]
+Scoring chains ... :   0%|          | 0/40 [00:00<?, ?it/s]We strongly recommend passing in an `attention_mask` since your input_ids may be padded. See https://huggingface.co/docs/transformers/troubleshooting#incorrect-output-when-padding-tokens-arent-masked.
+`loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+Scoring chains ... :   2%|▎         | 1/40 [00:06<04:17,  6.61s/it]Scoring chains ... :   5%|▌         | 2/40 [00:53<19:12, 30.32s/it]Scoring chains ... :   8%|▊         | 3/40 [00:57<11:18, 18.33s/it]Scoring chains ... :  10%|█         | 4/40 [01:40<16:53, 28.17s/it]Scoring chains ... :  12%|█▎        | 5/40 [02:43<23:36, 40.48s/it]Scoring chains ... :  15%|█▌        | 6/40 [04:01<30:09, 53.21s/it]Token indices sequence length is longer than the specified maximum sequence length for this model (3094 > 1024). Running this sequence through the model will result in indexing errors
+Scoring chains ... :  18%|█▊        | 7/40 [08:39<1:09:45, 126.83s/it]Scoring chains ... :  20%|██        | 8/40 [08:42<46:36, 87.39s/it]   Scoring chains ... :  22%|██▎       | 9/40 [11:14<55:37, 107.66s/it]Scoring chains ... :  25%|██▌       | 10/40 [12:19<47:11, 94.37s/it]Scoring chains ... :  28%|██▊       | 11/40 [12:31<33:26, 69.19s/it]Scoring chains ... :  30%|███       | 12/40 [13:19<29:19, 62.82s/it]Scoring chains ... :  32%|███▎      | 13/40 [13:46<23:23, 51.97s/it]Scoring chains ... :  35%|███▌      | 14/40 [15:38<30:23, 70.12s/it]Scoring chains ... :  38%|███▊      | 15/40 [15:46<21:25, 51.44s/it]Scoring chains ... :  40%|████      | 16/40 [15:52<15:03, 37.65s/it]Scoring chains ... :  42%|████▎     | 17/40 [16:04<11:31, 30.07s/it]Scoring chains ... :  45%|████▌     | 18/40 [16:08<08:09, 22.24s/it]Scoring chains ... :  48%|████▊     | 19/40 [16:51<09:52, 28.21s/it]Scoring chains ... :  50%|█████     | 20/40 [17:56<13:07, 39.36s/it]Scoring chains ... :  52%|█████▎    | 21/40 [19:14<16:09, 51.02s/it]Scoring chains ... :  55%|█████▌    | 22/40 [21:27<22:39, 75.53s/it]Scoring chains ... :  57%|█████▊    | 23/40 [21:34<15:35, 55.05s/it]Scoring chains ... :  57%|█████▊    | 23/40 [23:15<17:11, 60.66s/it]
+Traceback (most recent call last):
+  File "/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/roscoe.py", line 262, in <module>
+    scores = evaluator.evaluate(score_types=score_types)
+  File "/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/score.py", line 993, in evaluate
+    scores = self.compute_nli_scores(
+  File "/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/score.py", line 900, in compute_nli_scores
+    self.contradiction_step_vs_step(
+  File "/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/score.py", line 583, in contradiction_step_vs_step
+    return self.max_contradiction(chain, chain, batch_size)
+  File "/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/score.py", line 564, in max_contradiction
+    probs.extend(self.contradiction_probability(pr, hyp))
+  File "/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/score.py", line 547, in contradiction_probability
+    output = self.nli_model(**input)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 1079, in forward
+    outputs = self.deberta(
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 786, in forward
+    encoder_outputs = self.encoder(
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 659, in forward
+    output_states, attn_weights = layer_module(
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/modeling_layers.py", line 94, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 438, in forward
+    attention_output, att_matrix = self.attention(
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 371, in forward
+    self_output, att_matrix = self.self(
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 251, in forward
+    rel_att = self.disentangled_attention_bias(
+  File "/root/autodl-tmp/.conda/envs/roscoe/lib/python3.10/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py", line 323, in disentangled_attention_bias
+    c2p_att = torch.bmm(query_layer, pos_key_layer.transpose(-1, -2))
+KeyboardInterrupt

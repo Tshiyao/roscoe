@@ -3,6 +3,24 @@ import os
 import argparse
 
 
+def clean_question(question):
+    """
+    清理问题字符串，移除指定的标记片段
+    
+    参数:
+        question: 原始问题字符串
+    返回:
+        清理后的问题字符串
+    """
+    # 需要移除的第一个片段
+    fragment1 = '<|im_start|>system\nPlease reason step by step, and put your final answer within \\boxed{}.<|im_end|>\n<|im_start|>user\n'
+    # 需要移除的第二个片段
+    fragment2 = '<|im_end|>\n<|im_start|>assistant\n'
+    
+    # 移除片段
+    cleaned = question.replace(fragment1, '').replace(fragment2, '')
+    return cleaned
+
 def process_json_to_jsonl(input_file_path, output_dir="output"):
     """
     处理原始JSON文件，生成三个新的JSONL文件到指定文件夹
@@ -59,7 +77,8 @@ def process_json_to_jsonl(input_file_path, output_dir="output"):
             with open(output_path, 'w', encoding='utf-8') as f:
                 for idx, item in enumerate(dataset):
                     # 提取所需字段
-                    question = item.get('question', '')
+                    question = clean_question(original_question)
+                    original_question = item.get('question', '')
                     responses = item.get('responses', [])
                     results = item.get('results', [])
                     answer = item.get('answer', '')
