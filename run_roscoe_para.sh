@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # ===================== 核心配置（可根据需求调整）=====================
-INPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/raw"
-OUTPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean"
-SCORE_OUTPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/output"
-LOG_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/logs"  # 并行日志目录（避免输出混乱）
+INPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/raw21"
+OUTPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21"
+SCORE_OUTPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/output21"
+LOG_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/logs21"  # 并行日志目录（避免输出混乱）
 # DATASETS="gsm8k"  # 可填多个：如 "math500 amc23 aime24"
-DATASETS="math500"
-MAX_PARALLEL=16     # 最大并行任务数（建议设为 CPU 核心数的 1-2 倍，如 4/8/16）
+DATASETS="aime24"
+MAX_PARALLEL=2    # 最大并行任务数（建议设为 CPU 核心数的 1-2 倍，如 4/8/16）
 # ====================================================================
 
 # 1. 初始化前置检查与目录创建
@@ -36,9 +36,9 @@ trap 'echo -e "\n正在终止所有并行任务..."; pkill -P $$; exit 1' SIGINT
 process_dir() {
     local input_dir="$1"  # 传入当前子文件夹路径
     local dir_name=$(basename "${input_dir%/}")  # 提取文件夹名
-    local input_file="$input_dir/None.json"
-    local clean_output_dir="$OUTPUT_ROOT/$dir_name"
-    local score_output_dir="$SCORE_OUTPUT_ROOT/$dir_name"
+    local input_file="$input_dir/raw.json"
+    local clean_output_dir="$OUTPUT_ROOT/$dir_name/"
+    local score_output_dir="$SCORE_OUTPUT_ROOT/$dir_name/"
     local log_file="$LOG_ROOT/${dir_name}_process.log"  # 每个任务独立日志
 
     # 输出并行任务开始信息（同时写日志）
@@ -46,7 +46,7 @@ process_dir() {
 
     # 检查原始文件是否存在
     if [ ! -f "$input_file" ]; then
-        echo "[$(date +'%Y-%m-%d %H:%M:%S')] 警告：$dir_name 未找到 None.json，跳过" | tee -a "$log_file"
+        echo "[$(date +'%Y-%m-%d %H:%M:%S')] 警告：$dir_name 未找到 raw.json，跳过" | tee -a "$log_file"
         return  # 退出当前并行任务，不影响其他任务
     fi
 
@@ -67,6 +67,10 @@ process_dir() {
 
     # 3.2 执行打分脚本
     echo "[$(date +'%Y-%m-%d %H:%M:%S')] $dir_name：开始打分（数据集：$DATASETS）" | tee -a "$log_file"
+    echo "处理文件 $clean_output_dir"
+    echo "保存到  $score_output_dir"
+    
+    # -t sim_sce -m facebook/roscoe-512-roberta-base \
     python /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/roscoe.py \
         --datasets "$DATASETS" \
         --output-directory "$score_output_dir" \

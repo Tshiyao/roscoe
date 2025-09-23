@@ -19,14 +19,14 @@
 
 # ========================== 请根据实际环境修改以下参数 ==========================
 # 1. 输入根目录：即包含所有顶层文件夹（如0919_dr_grpo_math）的output目录路径
-INPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/output/"  # 示例：若output在当前目录下，填./output；若在其他路径，填绝对路径（如/root/data/output）
+INPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/output21_select/"  # 示例：若output在当前目录下，填./output；若在其他路径，填绝对路径（如/root/data/output）
 # 2. 输出根目录：结果保存的result目录路径（脚本会自动创建）
-OUTPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/result"
+OUTPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/result21_select/"
 # 3. Python脚本路径：之前编写的ROSCOE指标计算Python脚本路径（需替换为实际路径）
 PYTHON_SCRIPT_PATH="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/roscoe_calculator.py"  # 示例：若脚本在当前目录，填./roscoe_separate_results.py
 # 4. 输入文件名（可选，若输入文件固定为scores_amc23.tsv则无需修改）
 #    若后续输入文件名变化，可修改此处（仅需文件名，无需路径和后缀）
-INPUT_FILENAME="scores_amc23"
+INPUT_FILENAME="scores_aime24"
 # ==============================================================================
 
 # -------------------------- 脚本核心逻辑（无需修改） --------------------------
@@ -59,8 +59,8 @@ echo -e "==================================== 开始 ===========================
 for top_dir in "$INPUT_ROOT"/*/; do
     # 提取顶层文件夹名称（如从./output/0919_dr_grpo_math/中提取0919_dr_grpo_math）
     top_dir_name=$(basename "${top_dir%/}")
-    # 构建当前文件夹下的TSV文件路径（固定结构：顶层文件夹/all-mpnet-base-v2/scores_amc23.tsv）
-    input_tsv="$top_dir/all-mpnet-base-v2/$INPUT_FILENAME.tsv"
+    # 构建当前文件夹下的TSV文件路径（固定结构：顶层文件夹/all-mpnet-base-v2/scores_amc23.tsv） facebook/roscoe-512-roberta-base
+    input_tsv="$top_dir/$INPUT_FILENAME.tsv"
     
     # 检查TSV文件是否存在（跳过无TSV的文件夹）
     if [ ! -f "$input_tsv" ]; then

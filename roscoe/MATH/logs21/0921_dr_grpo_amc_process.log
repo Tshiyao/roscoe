@@ -10,3 +10,41 @@
 已生成 /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_dr_grpo_amc/amc23.jsonl，包含 40 条记录
 处理完成
 [2025-09-24 00:10:14] 0921_dr_grpo_amc：开始打分（数据集：aime24）
+[2025-09-24 00:12:32] 开始处理：0921_dr_grpo_amc（日志：/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/logs21/0921_dr_grpo_amc_process.log）
+[2025-09-24 00:12:32] 0921_dr_grpo_amc：开始清洗
+输出文件夹: /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_dr_grpo_amc
+读取输入文件: /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/raw21/0921_dr_grpo_amc//raw.json
+写入JSONL文件/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_dr_grpo_amc/aime24.jsonl
+已生成 /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_dr_grpo_amc/aime24.jsonl，包含 30 条记录
+写入JSONL文件/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_dr_grpo_amc/math500.jsonl
+已生成 /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_dr_grpo_amc/math500.jsonl，包含 500 条记录
+写入JSONL文件/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_dr_grpo_amc/amc23.jsonl
+已生成 /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_dr_grpo_amc/amc23.jsonl，包含 40 条记录
+处理完成
+[2025-09-24 00:12:32] 0921_dr_grpo_amc：开始打分（数据集：aime24）
+/root/autodl-tmp/roscoe/ParlAI/parlai/core/opt.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+09/24/2025 00:12:36 - INFO - sentence_transformers.SentenceTransformer -   Use pytorch device_name: cuda:0
+09/24/2025 00:12:36 - INFO - sentence_transformers.SentenceTransformer -   Load pretrained SentenceTransformer: all-mpnet-base-v2
+Some weights of MPNetModel were not initialized from the model checkpoint at microsoft/mpnet-base and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Evaluating /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_dr_grpo_amc/aime24.jsonl
+Batches:   0%|          | 0/53 [00:00<?, ?it/s]Batches:   2%|▏         | 1/53 [00:00<00:14,  3.69it/s]Batches:   9%|▉         | 5/53 [00:00<00:03, 15.34it/s]Batches:  17%|█▋        | 9/53 [00:00<00:01, 22.45it/s]Batches:  28%|██▊       | 15/53 [00:00<00:01, 33.00it/s]Batches:  42%|████▏     | 22/53 [00:00<00:00, 43.94it/s]Batches:  60%|██████    | 32/53 [00:00<00:00, 59.48it/s]Batches:  74%|███████▎  | 39/53 [00:00<00:00, 62.53it/s]Batches: 100%|██████████| 53/53 [00:01<00:00, 52.77it/s]
+Batches:   0%|          | 0/3 [00:00<?, ?it/s]Batches:  67%|██████▋   | 2/3 [00:00<00:00, 17.50it/s]Batches: 100%|██████████| 3/3 [00:00<00:00, 22.23it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.85it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.83it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.25it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.22it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 109.95it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 137.51it/s]
+Scoring chains ... :   0%|          | 0/30 [00:00<?, ?it/s]We strongly recommend passing in an `attention_mask` since your input_ids may be padded. See https://huggingface.co/docs/transformers/troubleshooting#incorrect-output-when-padding-tokens-arent-masked.
+`loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+Scoring chains ... :   3%|▎         | 1/30 [02:08<1:01:57, 128.20s/it]Scoring chains ... :   7%|▋         | 2/30 [02:21<28:16, 60.59s/it]   Scoring chains ... :  10%|█         | 3/30 [02:33<17:15, 38.33s/it]Token indices sequence length is longer than the specified maximum sequence length for this model (1227 > 1024). Running this sequence through the model will result in indexing errors
+Scoring chains ... :  13%|█▎        | 4/30 [03:22<18:28, 42.62s/it]Scoring chains ... :  17%|█▋        | 5/30 [06:53<43:00, 103.22s/it]Scoring chains ... :  20%|██        | 6/30 [07:59<36:14, 90.60s/it] Scoring chains ... :  23%|██▎       | 7/30 [08:40<28:30, 74.37s/it]Scoring chains ... :  27%|██▋       | 8/30 [09:28<24:12, 66.00s/it]Scoring chains ... :  30%|███       | 9/30 [09:46<17:50, 50.99s/it]Scoring chains ... :  33%|███▎      | 10/30 [11:38<23:18, 69.92s/it]Scoring chains ... :  37%|███▋      | 11/30 [21:45<1:14:08, 234.13s/it]Scoring chains ... :  40%|████      | 12/30 [21:48<49:12, 164.05s/it]  Scoring chains ... :  43%|████▎     | 13/30 [22:26<35:40, 125.89s/it]Scoring chains ... :  47%|████▋     | 14/30 [22:43<24:46, 92.91s/it] Scoring chains ... :  50%|█████     | 15/30 [24:10<22:48, 91.22s/it]Scoring chains ... :  53%|█████▎    | 16/30 [27:12<27:37, 118.38s/it]Scoring chains ... :  57%|█████▋    | 17/30 [28:07<21:30, 99.28s/it] Scoring chains ... :  60%|██████    | 18/30 [31:17<25:19, 126.58s/it]Scoring chains ... :  63%|██████▎   | 19/30 [32:49<21:17, 116.10s/it]Scoring chains ... :  67%|██████▋   | 20/30 [33:32<15:44, 94.42s/it] Scoring chains ... :  70%|███████   | 21/30 [52:54<1:02:11, 414.63s/it]Scoring chains ... :  73%|███████▎  | 22/30 [52:56<38:47, 290.97s/it]  Scoring chains ... :  77%|███████▋  | 23/30 [54:12<26:25, 226.46s/it]Scoring chains ... :  80%|████████  | 24/30 [55:16<17:46, 177.68s/it]Scoring chains ... :  83%|████████▎ | 25/30 [1:01:33<19:46, 237.31s/it]Scoring chains ... :  87%|████████▋ | 26/30 [1:01:43<11:16, 169.11s/it]Scoring chains ... :  90%|█████████ | 27/30 [1:02:23<06:31, 130.56s/it]Scoring chains ... :  93%|█████████▎| 28/30 [1:04:12<04:08, 124.10s/it]Scoring chains ... :  97%|█████████▋| 29/30 [1:05:08<01:43, 103.64s/it]Scoring chains ... : 100%|██████████| 30/30 [1:05:43<00:00, 83.14s/it] Scoring chains ... : 100%|██████████| 30/30 [1:05:43<00:00, 131.46s/it]
+Scores written to /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/output21/0921_dr_grpo_amc/all-mpnet-base-v2/scores_aime24.tsv
+Max GPU Memory Allocated: 439 MB
+math500.jsonl
+['aime24']
+Skipping due to --datasets filter: math500.jsonl
+amc23.jsonl
+['aime24']
+Skipping due to --datasets filter: amc23.jsonl
+[2025-09-24 01:18:38] 0921_dr_grpo_amc：打分完成

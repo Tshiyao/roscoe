@@ -2,9 +2,9 @@
 
 
 # 定义输入和输出根目录
-INPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/raw"
-OUTPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean"
-SCORE_OUTPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/output"  # 打分结果根目录
+INPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/raw/"
+OUTPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean/"
+SCORE_OUTPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/output/"  # 打分结果根目录
 
 # 定义需要处理的数据集（可填写多个，用空格分隔）
 # DATASETS="gsm8k"  
@@ -29,7 +29,7 @@ for input_dir in "$INPUT_ROOT"/*/; do
         dir_name=$(basename "${input_dir%/}")
         
         # 构建输入文件路径（指向文件夹下的None.json）
-        input_file="$input_dir/None.json"
+        input_file="$input_dir/raw.json"
 
         # 检查None.json是否存在
         if [ ! -f "$input_file" ]; then
@@ -39,9 +39,9 @@ for input_dir in "$INPUT_ROOT"/*/; do
         fi
 
         # 构建清洗输出目录路径
-        clean_output_dir="$OUTPUT_ROOT/$dir_name"
+        clean_output_dir="$OUTPUT_ROOT/$dir_name/"
         # 构建打分输出目录路径（根据dirname在output下创建对应文件夹）
-        score_output_dir="$SCORE_OUTPUT_ROOT/$dir_name"
+        score_output_dir="$SCORE_OUTPUT_ROOT/$dir_name/"
 
         
         # 创建输出目录（如果不存在）
