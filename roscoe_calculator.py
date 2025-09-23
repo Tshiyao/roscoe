@@ -156,6 +156,25 @@ def calculate_roscoe_metrics(csv_file_path, output_file_path):
         result_df.insert(0, "ID", df.index)
         print("\n警告: 输入文件中未找到ID列，使用索引作为ID")
     
+    # 计算每行的overall平均值（四个指标的平均）
+    if calculated_metrics:
+        result_df['overall'] = result_df[calculated_metrics].mean(axis=1)
+        print("已计算每行的overall平均值")
+
+    # 计算所有行的平均值，添加到末尾，ID为"avg"
+    if not result_df.empty and calculated_metrics:
+        # 计算各列的平均值
+        avg_row = result_df[calculated_metrics + ['overall']].mean().to_frame().T
+        # 设置ID为"avg"
+        avg_row.insert(0, "ID", "avg")
+        # 将平均值行添加到结果数据框
+        result_df = pd.concat([result_df, avg_row], ignore_index=True)
+        print("已添加所有行的平均值行（ID为'avg'）")
+         
+        
+        
+        
+        
     # # 保存结果到输出文件
     # try:
     #     df.to_csv(output_file_path, index=False)

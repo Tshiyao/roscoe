@@ -24,6 +24,9 @@ INPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/output/"  # 示�
 OUTPUT_ROOT="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/result"
 # 3. Python脚本路径：之前编写的ROSCOE指标计算Python脚本路径（需替换为实际路径）
 PYTHON_SCRIPT_PATH="/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/roscoe_calculator.py"  # 示例：若脚本在当前目录，填./roscoe_separate_results.py
+# 4. 输入文件名（可选，若输入文件固定为scores_amc23.tsv则无需修改）
+#    若后续输入文件名变化，可修改此处（仅需文件名，无需路径和后缀）
+INPUT_FILENAME="scores_amc23"
 # ==============================================================================
 
 # -------------------------- 脚本核心逻辑（无需修改） --------------------------
@@ -33,10 +36,12 @@ if [ ! -d "$INPUT_ROOT" ]; then
     exit 1
 fi
 
-# 2. 创建输出根目录（若不存在）
-mkdir -p "$OUTPUT_ROOT"
-if [ ! -d "$OUTPUT_ROOT" ]; then
-    echo -e "\033[31m错误：无法创建输出根目录 $OUTPUT_ROOT！请检查路径权限。\033[0m"
+# 2. 创建输出根目录+中间文件夹（若不存在）
+# 中间文件夹路径：$OUTPUT_ROOT/$INPUT_FILENAME（如./result/scores_amc23）
+MIDDLE_DIR="$OUTPUT_ROOT/$INPUT_FILENAME"
+mkdir -p "$MIDDLE_DIR"
+if [ ! -d "$MIDDLE_DIR" ]; then
+    echo -e "\033[31m错误：无法创建中间文件夹 $MIDDLE_DIR！请检查路径权限。\033[0m"
     exit 1
 fi
 
@@ -48,13 +53,14 @@ fi
 
 # 4. 遍历输入根目录下的所有顶层文件夹（如0919_dr_grpo_math、Qwen3B等）
 echo -e "\033[32m开始批量处理，共发现 $(ls -d "$INPUT_ROOT"/*/ | wc -l) 个顶层文件夹\033[0m"
+echo -e "中间文件夹路径：$MIDDLE_DIR"
 echo -e "==================================== 开始 ====================================\n"
 
 for top_dir in "$INPUT_ROOT"/*/; do
     # 提取顶层文件夹名称（如从./output/0919_dr_grpo_math/中提取0919_dr_grpo_math）
     top_dir_name=$(basename "${top_dir%/}")
     # 构建当前文件夹下的TSV文件路径（固定结构：顶层文件夹/all-mpnet-base-v2/scores_amc23.tsv）
-    input_tsv="$top_dir/all-mpnet-base-v2/scores_amc23.tsv"
+    input_tsv="$top_dir/all-mpnet-base-v2/$INPUT_FILENAME.tsv"
     
     # 检查TSV文件是否存在（跳过无TSV的文件夹）
     if [ ! -f "$input_tsv" ]; then
@@ -63,8 +69,8 @@ for top_dir in "$INPUT_ROOT"/*/; do
         continue
     fi
     
-    # 构建输出CSV文件路径（输出根目录/顶层文件夹名.csv）
-    output_csv="$OUTPUT_ROOT/$top_dir_name.csv"
+    # 构建输出CSV文件路径（$OUTPUT_ROOT/$INPUT_FILENAME/$top_dir_name.csv）
+    output_csv="$MIDDLE_DIR/$top_dir_name.csv"
     
     # 打印当前处理信息
     echo -e "\033[34m正在处理：$top_dir_name\033[0m"
