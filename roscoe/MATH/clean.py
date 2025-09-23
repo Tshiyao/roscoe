@@ -77,8 +77,8 @@ def process_json_to_jsonl(input_file_path, output_dir="output"):
             with open(output_path, 'w', encoding='utf-8') as f:
                 for idx, item in enumerate(dataset):
                     # 提取所需字段
-                    question = clean_question(original_question)
                     original_question = item.get('question', '')
+                    question = clean_question(original_question)
                     responses = item.get('responses', [])
                     results = item.get('results', [])
                     answer = item.get('answer', '')

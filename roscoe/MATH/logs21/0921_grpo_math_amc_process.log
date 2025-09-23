@@ -1,0 +1,12 @@
+[2025-09-24 00:10:14] 开始处理：0921_grpo_math_amc（日志：/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/logs21/0921_grpo_math_amc_process.log）
+[2025-09-24 00:10:14] 0921_grpo_math_amc：开始清洗
+输出文件夹: /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_grpo_math_amc
+读取输入文件: /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/raw21/0921_grpo_math_amc//raw.json
+写入JSONL文件/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_grpo_math_amc/aime24.jsonl
+已生成 /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_grpo_math_amc/aime24.jsonl，包含 30 条记录
+写入JSONL文件/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_grpo_math_amc/math500.jsonl
+已生成 /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_grpo_math_amc/math500.jsonl，包含 500 条记录
+写入JSONL文件/root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_grpo_math_amc/amc23.jsonl
+已生成 /root/autodl-tmp/roscoe/ParlAI/projects/roscoe/MATH/clean21/0921_grpo_math_amc/amc23.jsonl，包含 40 条记录
+处理完成
+[2025-09-24 00:10:14] 0921_grpo_math_amc：开始打分（数据集：aime24）
